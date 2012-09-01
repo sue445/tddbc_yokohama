@@ -63,4 +63,19 @@ describe VendingMachine do
       vm.pay_back.should == 1
     end
   end
+
+  context "扱えないお金と扱えるお金が混在した時" do
+    before do
+      vm.insert(1)
+      vm.insert(10)
+    end
+
+    it 'totalは10円が返ってくること' do
+      vm.total.should == 10
+    end
+
+    it 'pay_backは11円が返ること' do
+      vm.pay_back.should == 11
+    end
+  end
 end
