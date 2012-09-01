@@ -81,16 +81,10 @@ describe VendingMachine do
 
   describe '#stock' do
     let(:cola) { Juice.new('コーラ', 120) }
+    let(:cola5) { [cola, cola, cola, cola, cola] }
 
     it 'stockはコーラ5本を帰ってくること' do
-      actual = vm.stock
-
-      actual.length.should == 5
-      actual[0].should == cola
-      actual[1].should == cola
-      actual[2].should == cola
-      actual[3].should == cola
-      actual[4].should == cola
+      vm.stock.should =~ cola5
     end
   end
 end
