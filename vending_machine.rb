@@ -2,20 +2,23 @@
 
 class VendingMachine
   def initialize
-    @amount = 0
+    # 投入金額
+    @amounts = []
   end
 
   def insert(coin)
-    @amount += coin
+    @amounts << coin
   end
 
   def total
-    @amount
+    @amounts.inject(0) do |sum, money|
+      sum += money
+    end
   end
 
   def pay_back
-    result = @amount
-    @amount = 0
+    result = total
+    @amounts = []
     result
   end
 end
