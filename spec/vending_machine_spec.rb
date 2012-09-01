@@ -22,7 +22,7 @@ describe VendingMachine do
     end
   end
 
-  desribe '#pay_back' do
+  describe '#pay_back' do
     it '何もしない状態だと0円が返ること' do
       vm.pay_back.should == 0
     end
