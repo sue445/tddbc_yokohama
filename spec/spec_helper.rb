@@ -3,6 +3,7 @@ require 'rspec'
 
 $LOAD_PATH.push(File.join(__FILE__, '..', '..'))
 require 'vending_machine'
+require 'juice'
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
