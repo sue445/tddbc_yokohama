@@ -4,6 +4,8 @@ require "spec_helper"
 describe VendingMachine do
   let(:vm){ VendingMachine.new }
 
+  # TODO subject でリファクタリングする
+
   describe '#total' do
 
     it '何もしない状態で総計を取得すると0円が返ること' do
