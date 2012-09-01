@@ -50,16 +50,16 @@ describe VendingMachine do
     end
   end
 
-  context "扱えないお金がきた時" do
+  context "扱えないお金だけがきた時" do
     before do
       vm.insert(1)
     end
 
-    it 'totalには加算されていないこと' do
+    it 'totalは0円が返ってくること' do
       vm.total.should == 0
     end
 
-    it 'pay_backでは1円が返ること' do
+    it 'pay_backでは1円が返ってくること' do
       vm.pay_back.should == 1
     end
   end
@@ -74,7 +74,7 @@ describe VendingMachine do
       vm.total.should == 10
     end
 
-    it 'pay_backは11円が返ること' do
+    it 'pay_backは11円が返ってくること' do
       vm.pay_back.should == 11
     end
   end
