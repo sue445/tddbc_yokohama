@@ -78,4 +78,11 @@ describe VendingMachine do
       vm.pay_back.should == 11
     end
   end
+
+  describe '#stock' do
+    
+    it 'stockはコーラ5本を帰ってくること' do
+      vm.stock.should == [Juice.new('coke', 120), Juice.new('coke', 120), Juice.new('coke', 120), Juice.new('coke', 120), Juice.new('coke', 120), Juice.new('coke', 120)]
+    end
+  end
 end
