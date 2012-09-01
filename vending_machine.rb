@@ -13,5 +13,9 @@ class VendingMachine
     @amount
   end
 
-  alias :pay_back :total
+  def pay_back
+    result = @amount
+    @amount = 0
+    result
+  end
 end

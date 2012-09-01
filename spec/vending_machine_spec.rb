@@ -42,7 +42,11 @@ describe VendingMachine do
       end
 
       it { should == 10 }
+
+      it "amountが初期化されていること" do
+        vm.pay_back
+        vm.total.should == 0
+      end
     end
   end
-
 end
