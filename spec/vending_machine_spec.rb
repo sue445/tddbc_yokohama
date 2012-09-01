@@ -49,4 +49,18 @@ describe VendingMachine do
       end
     end
   end
+
+  context "扱えないお金がきた時" do
+    before do
+      vm.insert(1)
+    end
+
+    it 'totalには加算されていないこと' do
+      vm.total.should == 0
+    end
+
+    it 'pay_backでは1円が返ること' do
+      vm.pay_back.should == 1
+    end
+  end
 end
