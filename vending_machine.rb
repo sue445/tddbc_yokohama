@@ -4,6 +4,10 @@ class VendingMachine
   def initialize
     # 投入金額
     @amounts = []
+
+    @juices = []
+    coke = Juice.new("コーラ", 120)
+    5.times { @juices << coke }
   end
 
   def insert(coin)
@@ -25,6 +29,10 @@ class VendingMachine
 
     @amounts = []
     result
+  end
+
+  def stock
+    @juices
   end
 
   private
