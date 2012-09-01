@@ -2,8 +2,9 @@
 require "spec_helper"
 
 describe VendingMachine do
+  let(:vm){ VendingMachine.new }
+
   describe '#total' do
-    let(:vm){ VendingMachine.new }
 
     it '何もしない状態で総計を取得すると0円が返ること' do
       vm.total.should == 0
@@ -19,6 +20,13 @@ describe VendingMachine do
       vm.insert(100)
       vm.total.should == 150
     end
+  end
+
+  desribe '#pay_back' do
+    it '何もしない状態だと0円が返ること' do
+      vm.pay_back.should == 0
+    end
+
   end
 
 end
