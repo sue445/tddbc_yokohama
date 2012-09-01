@@ -32,13 +32,18 @@ describe VendingMachine do
   end
 
   describe '#pay_back' do
-    it '何もしない状態だと0円が返ること' do
-      vm.pay_back.should == 0
+    subject { vm.pay_back }
+
+    context '何もしない状態' do
+      it { should == 0 }
     end
 
-    it '10円玉を入れた状態だと10円が返ること' do
-      vm.insert(10)
-      vm.pay_back.should == 10
+    context '10円玉を入れた状態' do
+      before do
+        vm.insert(10)
+      end
+
+      it { should == 10 }
     end
   end
 
