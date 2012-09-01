@@ -56,7 +56,6 @@ describe VendingMachine do
     end
 
     it 'totalには加算されていないこと' do
-      pending "後でやる"
       vm.total.should == 0
     end
 

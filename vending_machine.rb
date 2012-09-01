@@ -11,14 +11,22 @@ class VendingMachine
   end
 
   def total
-    @amounts.inject(0) do |sum, money|
+    @amounts.select {|money|
+      ACCEPT_COINS.include? money
+    }.inject(0) do |sum, money|
       sum += money
     end
   end
 
   def pay_back
-    result = total
+    result = @amounts.inject(0) do |sum, money|
+      sum += money
+    end
+
     @amounts = []
     result
   end
+
+  private
+  ACCEPT_COINS = [10, 50, 100, 500, 1000]
 end
