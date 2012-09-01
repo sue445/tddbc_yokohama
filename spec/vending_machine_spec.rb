@@ -7,20 +7,27 @@ describe VendingMachine do
   # TODO subject でリファクタリングする
 
   describe '#total' do
+    subject { vm.total }
 
-    it '何もしない状態で総計を取得すると0円が返ること' do
-      vm.total.should == 0
+    context '何もしない状態' do
+      it { should == 0 }
     end
 
-    it '10円玉を入れた時に10円が返ること' do
-      vm.insert(10)
-      vm.total.should == 10
+    context '10円玉を入れた時' do
+      before do
+        vm.insert(10)
+      end
+
+      it {should == 10 }
     end
 
-    it '50円玉と100円玉を入れた時に150円が返ること' do
-      vm.insert(50)
-      vm.insert(100)
-      vm.total.should == 150
+    context '50円玉と100円玉を入れた時' do
+      before do
+        vm.insert(50)
+        vm.insert(100)
+      end
+
+      it { should == 150 }
     end
   end
 
