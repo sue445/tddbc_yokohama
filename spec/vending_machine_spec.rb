@@ -13,6 +13,13 @@ describe VendingMachine do
       vm.insert(10)
       vm.total.should == 10
     end
+
+    it '50円玉と100円玉を入れた時に150円が返ること' do
+      vm = VendingMachine.new
+      vm.insert(50)
+      vm.insert(100)
+      vm.total.should == 150
+    end
   end
 
 end
