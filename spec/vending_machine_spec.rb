@@ -36,6 +36,10 @@ describe VendingMachine do
       vm.pay_back.should == 0
     end
 
+    it '10円玉を入れた状態だと10円が返ること' do
+      vm.insert(10)
+      vm.pay_back.should == 10
+    end
   end
 
 end
