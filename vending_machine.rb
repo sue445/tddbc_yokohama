@@ -2,4 +2,7 @@
 
 class VendingMachine
 
+  def total
+    0
+  end
 end
